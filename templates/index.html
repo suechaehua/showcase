@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>websec</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1, h2 {
+            text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #bbb;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: 2px solid #444;
+            border-radius: 8px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #444;
+            border-color: #555;
+            transform: translateY(-4px);
+        }
+
+        button:active {
+            background-color: #555;
+            transform: translateY(2px);
+        }
+
+        /* Glowing text effect */
+        h1::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #00bcd4, #ff4081, #00bcd4);
+            animation: glowing 1.5s infinite alternate;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes glowing {
+            0% { background-position: -100% 0; }
+            100% { background-position: 100% 0; }
+        }
+
+        /* Add some glow to button text on hover */
+        button:hover {
+            box-shadow: 0 0 20px #ff4081, 0 0 30px #ff4081;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to websec</h1>
+    <h2>Click to use!</h2>
+    <form action="/portscanning" method="get"><button id="portscan">Port Scanning</button></form>
+    <form action="/bruteforce" method="get"><button id="bp">Brute Force</button></form>
+</body>
+</html>
